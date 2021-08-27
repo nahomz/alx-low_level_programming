@@ -1,0 +1,1 @@
+This directory contains shell script and basic C program
