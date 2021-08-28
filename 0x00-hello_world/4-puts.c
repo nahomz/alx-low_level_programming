@@ -7,8 +7,6 @@
  */
 int main(viod)
 {
-
-         puts("\"proramming is like building a multilingual puzzle");
-         return (0);
+puts("\"Proramming is like building a multilingual puzzle");
+return (0);
 }
-  
