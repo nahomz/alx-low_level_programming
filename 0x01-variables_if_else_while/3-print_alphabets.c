@@ -8,11 +8,18 @@
 */
 int main(void)
 {
-char low;
-for (low = 'a' low <= 'z'; low++)
-putchar(low);
-for (low = 'A' low <= 'Z'; low++)
-putchar(low);
+char a = 'a';
+while (a <= 'z')
+{
+putchar(a);
+a++;
+}
+a = 'A';
+while (a <= 'Z')
+{
+putchar(a);
+a++;
+}
 putchar('\n');
 return (0);
 }

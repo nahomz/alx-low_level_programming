@@ -9,9 +9,10 @@
 int main(void)
 {
 int d;
-char low;
-for (d = '0'; d <= '9'; d++)
-putchar(low);
+for (d = 48; d < 58; d++)
+putchar(d);
+for (d = 'a'; d <= 'f'; l++)
+putchar(d);
 putchar('\n');
 return (0);
 }
