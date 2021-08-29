@@ -11,11 +11,10 @@ int main(void)
 int n;
 int L;
 char str[] = "Last digitnof";
-
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-
-if (L>5)
+L = n % 10;
+if (L > 5)
 printf("%s %d is %d and is greater than 5\n", str, n, L);
 else if (L == 0)
 printf("%s %d is %d and is 0/n", str, n, L);
