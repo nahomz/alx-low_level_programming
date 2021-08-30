@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
 * main - prints out all possible combos of 3 digits
+*
 * Return: 0
 */
 int main(void)
@@ -8,22 +9,16 @@ int main(void)
 int i, j, k;
 for (j = 48; i < 58; i++)
 {
-for (j = i; j < 58; k++)
+for (j = 49; j < 58; j++)
 {
-for (k = j; k < 58; k++)
+for (k = 50; k < 58; k++)
 {
-if (i == j || j == k || i == k)
+if (i > j && j > k)
 {
-continue;
-}
 putchar(i);
 putchar(j);
 putchar(k);
-if (i == 55 && k == 57)
-{
-break;
-}
-else
+if (i != 55 && k != 56)
 {
 putchar(',');
 putchar(' ');
