@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 /**
-* main - Entry point
+* main - print out all the numbers under with a ,
 *
-* Return Always 0 (Success)
+* Return: 0 (Success)
 */
 int main(void)
 {
