@@ -8,11 +8,11 @@
 */
 int main(void)
 {
-int d;
-for (d = '0'; d <= '9'; d++)
+int i;
+for (i = 48; i < 58; i++)
 {
-putchar(d);
-if (d != '9')
+putchar(i);
+if (i != 57)
 {
 putchar(',');
 putchar(' ');
