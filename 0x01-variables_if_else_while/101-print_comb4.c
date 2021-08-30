@@ -15,10 +15,16 @@ for (k = 50; k < 58; k++)
 {
 if (i > j && j > k)
 {
+continue;
+}
 putchar(i);
 putchar(j);
 putchar(k);
-if (i != 55 && k != 56)
+if (i == 55 && k == 56)
+{
+break;
+}
+else
 {
 putchar(',');
 putchar(' ');
