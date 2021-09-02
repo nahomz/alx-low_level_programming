@@ -1,16 +1,11 @@
-#include "holberton.h
+#include "main.h"
 /**
-* main - check the code for ALX School students.
-*
-* Return: Always 0.
+* main - prints alphabet
 */
 void print_alphabet(void)
 {
-char ch = 'a';
-while (ch <= 'z')
-{
-_putchar(ch);
- ch++;
-}
+char c;
+for (c = 'a'; c <= 'z'; c++)
+_putchar(c);
 _putchar('\n');
 }

@@ -1,1 +1,1 @@
-0x02. C - Function, loops and nested loop
+This directory contains functions_nasted_loops on C programming practical projects
