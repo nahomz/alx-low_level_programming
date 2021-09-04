@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* times_table - print times table
+* times_table - prints times table
 */
 void times_table(void)
 {
@@ -11,7 +11,7 @@ for (j = 0; j < 10; j++)
 {
 if (j == 0)
 {
-Putchar(48);
+_putchar(48);
 continue;
 }
 prod = i * j;

@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
 * print_to_98 - prints every number from n to 98
 * @n: starting number
@@ -10,7 +11,7 @@ if (n <= 98)
 {
 for (i = n; i < 98; i++)
 {
-printf("%i, ", i)
+printf("%i, ", i);
 }
 else
 {
