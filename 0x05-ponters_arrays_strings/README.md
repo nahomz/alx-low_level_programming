@@ -1,0 +1,1 @@
+0x05-pointers_arrays_strings in this directory projects work on alx program
