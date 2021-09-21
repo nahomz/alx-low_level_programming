@@ -1,96 +1,73 @@
-#include "main.h"
+#include <stdlib.h>
 /**
-* strtow - splits a string into words
-* @str: string of words to be split
-* Return: double pointer to strings
+* strtow - char
+* @str: pointer to string params
+* Return: char
 */
 char **strtow(char *str)
 {
-char **ptr;
-int i, k, len, start, end, j = 0;
-int words =  countWords(str);
-if (!str || !countWords(str))
-return (NULL);
-ptr = malloc(sizeof(char *) * (words + 1));
-if (!ptr)
-return (NULL);
-for (i = 0; i < words; i++)
+int i = 0, j = 0, k = 0;
+int len = 0, count = 0;
+char **f, *col;
+if (!str || !*str)
 {
-start = startIndex(str, j);
-end = endIndex(str, start);
-len = end - start;
-ptr[i] = malloc(sizeof(char) * (len + 1));
-if (!ptr[i])
-{
-i -= 1;
-while (i >= 0)
-{
-free(ptr[i]);
-i--;
-}
-free(ptr);
 return (NULL);
 }
-for (k = 0; k < len; k++)
-ptr[i][k] = str[start++];
-ptr[i][k++] = '\0';
-j = end + 1;
-}
-ptr[i] = NULL;
-return (ptr);
-}
-/**
-* isSpace - determines if character is a space or not
-* @c: input char
-* Return: 1 if true or 0 or not
-*/
-int isSpace(char c)
+while (*(str + i))
 {
-return (c == ' ');
-}
-/**
-* startindex - returns first index of non-space char
-* @s: input string
-* @index: starting index
-* Return: index of first non-space char
-*/
-int startIndex(char *s, int index)
+if (*(str + i) != ' ')
 {
-while (isSpace(*(s + index)))
-index++;
-return (index);
-}
-/**
-* endIndex - returns last index of non-space char
-* @s: input string
-* @index: starting index
-* Return: index of last index of non-space char
-*/
-int endIndex(char *s, int index)
+if (*(str + i + 1) == ' ' || *(str + i + 1) == 0)
 {
-while (!isSpace(*(s + index)))
-index++;
-return (index);
+count += 1;
 }
-/**
-* countWords - counts numbers of words in string
-* @s: input string
-* Return: number of words
-*/
-int countWords(char *s)
-{
-int wordOn = 0;
-int words = 0;
-while (*s)
-{
-if (isSpace(*s) && wordOn)
-wordOn = 0;
-else if (!isSpace(*s) && !wordOn)
-{
-wordOn = 1;
-words++;
 }
-s++;
+i++;
 }
-return (words);
+if (count == 0)
+{
+return (NULL);
+}
+count += 1;
+f = malloc(sizeof(char *) * count);
+if (!f)
+{
+return (NULL);
+}
+i = 0;
+while (*str)
+{
+while (*str == ' ' && *str)
+{
+str++;
+}
+len = 0;
+while (*(str + len) != ' ' && *(str + len))
+{
+len += 1;
+}
+len += 1;
+col = malloc(sizeof(char) * len);
+if (!col)
+{
+for (k = j - 1; k >= 0; k--)
+{
+free(f[k]);
+}
+free(f);
+return (NULL);
+}
+for (k = 0; k < (len - 1);  k++)
+{
+*(col + k) = *(str++);
+}
+*(col + k) = '\0';
+*(f + j) = col;
+if (j < (count - 1))
+{
+j++;
+}
+}
+*(f + j) = NULL;
+return (f);
 }
